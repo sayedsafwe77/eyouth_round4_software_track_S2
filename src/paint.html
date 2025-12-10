@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Paint Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #myCanvas {
+            border: 1px solid #000;
+            cursor: crosshair;
+            margin-top: 10px;
+        }
+        .controls {
+            margin: 10px 0;
+        }
+        .controls label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Mini Paint Tool</h2>
+
+    <div class="controls">
+        <label for="colorPicker">Color:</label>
+        <input type="color" id="colorPicker" value="#000000">
+
+        <label for="lineWidth">Line Width:</label>
+        <input type="range" id="lineWidth" min="1" max="20" value="3">
+
+        <button id="eraser">Eraser</button>
+        <button id="clear">Clear Canvas</button>
+    </div>
+
+    <canvas id="myCanvas" width="800" height="500"></canvas>
+
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const colorPicker = document.getElementById('colorPicker');
+        const lineWidth = document.getElementById('lineWidth');
+        const eraserBtn = document.getElementById('eraser');
+        const clearBtn = document.getElementById('clear');
+
+        let drawing = false;
+        let currentColor = colorPicker.value;
+        let currentWidth = lineWidth.value;
+        let erasing = false;
+
+        // Update color and line width
+        colorPicker.addEventListener('input', (e) => {
+            currentColor = e.target.value;
+            erasing = false;
+        });
+
+        lineWidth.addEventListener('input', (e) => {
+            currentWidth = e.target.value;
+        });
+
+        // Enable eraser
+        eraserBtn.addEventListener('click', () => {
+            erasing = true;
+        });
+
+        // Clear canvas
+        clearBtn.addEventListener('click', () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+
+        // Drawing events
+        canvas.addEventListener('mousedown', (e) => {
+            drawing = true;
+            ctx.beginPath();
+            ctx.moveTo(e.offsetX, e.offsetY);
+        });
+
+        canvas.addEventListener('mousemove', (e) => {
+            if (!drawing) return;
+
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.strokeStyle = erasing ? '#ffffff' : currentColor;
+            ctx.lineWidth = currentWidth;
+            ctx.lineCap = 'round';
+            ctx.stroke();
+        });
+
+        canvas.addEventListener('mouseup', () => drawing = false);
+        canvas.addEventListener('mouseleave', () => drawing = false);
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Semantic Tags Example</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; }
+        header, nav, main, article, section, aside, footer {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+        }
+        header { background-color: #f8b400; }
+        nav { background-color: #00bfff; }
+        article { background-color: #f0f0f0; }
+        aside { background-color: #e0ffe0; }
+        footer { background-color: #ccc; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>My Website</h1>
+        <p>HTML5 Semantic Tags Example</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content area -->
+    <main>
+        <!-- Section -->
+        <section id="home">
+            <h2>Home Section</h2>
+            <p>This is the home section of the webpage.</p>
+        </section>
+
+        <!-- Article -->
+        <article id="blog">
+            <h2>Blog Article</h2>
+            <p>Posted on <time datetime="2025-12-05">December 5, 2025</time></p>
+            <p>This is an article about HTML5 semantic elements.</p>
+
+            <!-- Nested section in article -->
+            <section>
+                <h3>Subsection in Article</h3>
+                <p>Details about semantic elements in HTML5.</p>
+            </section>
+        </article>
+
+        <!-- Aside (sidebar) -->
+        <aside>
+            <h3>Related Links</h3>
+            <ul>
+                <li><a href="#">HTML5 Guide</a></li>
+                <li><a href="#">CSS3 Tutorial</a></li>
+                <li><a href="#">JavaScript Tips</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 My Website. All rights reserved.</p>
+        <address>
+            Contact: <a href="mailto:info@example.com">info@example.com</a>
+        </address>
+    </footer>
+
+    <!-- Figure and figcaption -->
+    <figure>
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <figcaption>This is a placeholder image with a caption.</figcaption>
+    </figure>
+
+</body>
+</html>
