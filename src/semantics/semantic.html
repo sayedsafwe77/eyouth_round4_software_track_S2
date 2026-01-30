@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML5 Semantic Tags Example</title>
+    <title>HTML5 Semantic Tags Example title</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; }
-        header, nav, main, article, section, aside, footer {
+        .header, nav, main, article, section, aside, footer {
             padding: 10px;
             margin: 5px;
             border: 1px solid #ccc;
         }
-        header { background-color: #f8b400; }
+        .header { background-color: #f8b400; }
         nav { background-color: #00bfff; }
         article { background-color: #f0f0f0; }
         aside { background-color: #e0ffe0; }
@@ -19,10 +19,9 @@
     </style>
 </head>
 <body>
-
     <!-- Header -->
-    <header>
-        <h1>My Website</h1>
+    <header class="header">
+        <h1><span>My</span> Website</h1>
         <p>HTML5 Semantic Tags Example</p>
     </header>
 
@@ -78,9 +77,18 @@
 
     <!-- Figure and figcaption -->
     <figure>
-        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <img src="../../images/home/telephoto_lens__q7w8mmhm4tmm_medium_2x.jpg" alt="Placeholder Image">
         <figcaption>This is a placeholder image with a caption.</figcaption>
     </figure>
+
+    <picture>
+        <figure>
+            <source srcset="../../images/home/telephoto_lens__q7w8mmhm4tmm_medium_2x.jpg" media="(min-width: 800px)">
+            <source srcset="../../images/home/telephoto_lens__q7w8mmhm4tmm_small_1x.jpg" media="(min-width: 400px)">
+            <img src="../../images/home/telephoto_lens__q7w8mmhm4tmm_small_1x.jpg" alt="Responsive Placeholder Image">
+            <figcaption>This is a responsive placeholder image with a caption.</figcaption>
+        </figure>
+    </picture>
 
 </body>
 </html>

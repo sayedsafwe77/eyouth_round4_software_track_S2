@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.parent {
+  background: rgb(158, 157, 157);
+  height: 300vh;
+}
+[class*="direct-child"] {
+  height: 30vh;
+  text-align: center;
+}
+/* static relative absolute fixed sticky */
+/* to the nearest non static parent */
+
+.child-1-first-child {
+  background: rgb(223, 94, 94);
+  position: relative;
+  top: 0px;
+}
+.child-1-second-child {
+  background: rgb(215, 34, 34);
+  position: relative;
+  top: 0px;
+}
+.child-1 {
+  background: rgb(232, 147, 147);
+  position: relative;
+  top: 0px;
+}
+.child-2 {
+  position: sticky;
+  background: rgb(160, 160, 212);
+  top: 0px;
+  z-index: 2;
+}
+.child-3 {
+  background: rgb(212, 190, 160);
+  position: relative;
+  top: 0px;
+}
+.child-2-first-child {
+  background: rgb(98, 98, 197);
+  position: relative;
+  top: 0px;
+}
+.child-2-second-child {
+  background: rgb(36, 36, 183);
+  position: relative;
+
+  top: 0px;
+}
+
+.child-3-first-child {
+  background: rgb(197, 159, 98);
+  position: relative;
+  top: 0px;
+}
+.child-3-second-child {
+  background: rgb(183, 114, 36);
+  position: relative;
+  top: 0px;
+}
+.sub-child {
+  padding: 10px;
+}
