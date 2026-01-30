@@ -1,0 +1,56 @@
+@font-face {
+  font-family: Sansation; /* set name */
+  src: url(./fonts/Sansation_Regular.ttf); /* url of the font */
+}
+@font-face {
+  font-family: Sansation-Bold; /* set name */
+  src: url(./fonts/Sansation_Bold_Italic.ttf); /* url of the font */
+  font-weight: bold;
+  font-style: italic;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Sayed", cursive;
+}
+.hero {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  padding-top: 130px;
+  color: white;
+  text-align: center;
+  font-style: oblique;
+}
+.content p {
+  font-family: Sansation-Bold;
+}
+.content .btn {
+  padding: 10px 20px;
+  background: linear-gradient(to right, #ff7a18, #ffb347);
+  border: none;
+  outline-style: none;
+  margin-top: 20px;
+  border-radius: 15px;
+  transition: transform 1s ease, box-shadow 1s ease;
+}
+.content .btn:hover {
+  box-shadow: 0 10px 25px rgba(230, 6, 6, 0.3);
+  cursor: pointer;
+  transform: translateY(-8px);
+}
+.spacer {
+  height: 150vh;
+}

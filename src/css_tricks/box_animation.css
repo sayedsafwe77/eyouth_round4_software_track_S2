@@ -1,0 +1,59 @@
+/* 1. Define the custom property to allow angle animation [1] */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* 2. Style the main card [2] */
+.card {
+  position: relative;
+  /* Add your desired width, height, and background here */
+  background: #1c1f2b;
+  border-radius: 10px;
+}
+
+/* 3. Create the border and glow elements using pseudo-elements [3, 4] */
+.card::after,
+.card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%; /* Centers the element [2] */
+  height: 100%;
+  width: 100%;
+  padding: 3px; /* This controls the thickness of the border [2] */
+  z-index: -1; /* Pushes the elements behind the card [2] */
+  border-radius: 10px; /* Should match the card's border radius [2] */
+
+  /* Apply the conic gradient using the custom --angle variable [2, 5] */
+  /* Note: Repeat the first color at the end to smooth the cut [4] */
+  background-image: conic-gradient(
+    from var(--angle),
+    #ff4545,
+    #00ff99,
+    #006aff,
+    #ff0095,
+    #ff4545
+  );
+
+  /* Apply the spin animation [5] */
+  animation: spin 3s linear infinite;
+}
+
+/* 4. Apply the glow effect specifically to the ::before element [4] */
+.card::before {
+  filter: blur(1.5rem); /* Creates the "glob"/glow effect [4] */
+  opacity: 0.5; /* Softens the glow [4] */
+}
+
+/* 5. Define the keyframes to rotate the angle variable [5] */
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
