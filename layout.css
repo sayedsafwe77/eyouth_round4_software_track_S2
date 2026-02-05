@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  padding: 50px;
+}
+.header {
+  border: 2px solid black;
+  border-radius: 20px;
+  height: 250px;
+  margin-bottom: 20px;
+}
+.main-section {
+  gap: 20px;
+  height: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.main-section div:first-child {
+  /* = width in case direction is row */
+  /* = height in case direction is column */
+  /* two element in one row in case of desktop and in two rows in case of mobile */
+  width: calc(25% - 10px);
+
+  border: 2px solid black;
+  border-radius: 20px;
+}
+.main-section div:last-child {
+  border: 2px solid black;
+  width: calc(75% - 10px);
+  border-radius: 20px;
+}
+.testominal-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: 100px;
+}
+
+.testominal-section div {
+  width: calc(25% - 20px);
+  border: 2px solid black;
+  border-radius: 20px;
+}
+/* extra small */
+@media (max-width: 576px) {
+}
+/* small */
+@media (min-width: 576px) and (max-width: 768px) {
+  .main-section div {
+    width: 100% !important;
+  }
+  .testominal-section div {
+    width: calc(50% - 20px) !important;
+  }
+}
+/* medium */
+@media (min-width: 768px) and (max-width: 992px) {
+}
+/* large */
+@media (min-width: 992px) and (max-width: 1200px) {
+  .header {
+    background-color: black;
+  }
+}
+/* x-large */
+@media (min-width: 1200px) and (max-width: 1400px) {
+}
+/* xx-large */
+@media (min-width: 1400px) {
+}

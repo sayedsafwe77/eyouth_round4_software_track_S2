@@ -4,13 +4,16 @@
   initial-value: 0deg;
   inherits: false;
 }
-
+body {
+  background: rgba(0, 0, 0, 0.761);
+}
 /* 2. Style the main card [2] */
 .card {
   position: relative;
   /* Add your desired width, height, and background here */
   background: #1c1f2b;
   border-radius: 10px;
+  height: 30vh;
 }
 
 /* 3. Create the border and glow elements using pseudo-elements [3, 4] */

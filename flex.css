@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  background: darkslategray;
+}
+.container {
+  background: lightcoral;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  /* align-items: start; */
+  gap: 30px;
+  height: 30vh;
+}
+.item {
+  background: lightgray;
+  width: 20%;
+  height: 30vh;
+}
