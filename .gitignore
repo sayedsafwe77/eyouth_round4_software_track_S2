@@ -1,2 +1,5 @@
 src/ignores/*.txt
 .env
+.aws-sam
+.package.json
+template.yaml

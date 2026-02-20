@@ -1,0 +1,30 @@
+{
+  "phone": "+971565460726",
+  "whatsapp": "80050003",
+  "showrooms": [
+    {
+      "ar": "صالة عرض شارع الشيخ زايد دبي",
+      "en": "Sheikh Zayed road Dubai showroom"
+    },
+    {
+      "ar": "صالة عرض ديرة دبي",
+      "en": "Deira Dubai showroom"
+    },
+    {
+      "ar": "صالة عرض المصفح أبو ظبي",
+      "en": "Musaffah Abu Dhabi showroom"
+    },
+    {
+      "ar": "صالة عرض العين",
+      "en": "Al Ain showroom"
+    },
+    {
+      "ar": "صالة عرض رأس الخيمة",
+      "en": "Ras al Khaimah showroom"
+    },
+    {
+      "ar": "صالة عرض الشارقة",
+      "en": "Sharjah showroom"
+    }
+  ]
+}

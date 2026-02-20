@@ -1,0 +1,14 @@
+{
+  "Records": [
+    {
+      "s3": {
+        "bucket": {
+          "name": "beyondcreation-assets-dev"
+        },
+        "object": {
+          "key": "autoconnect-dev/client-test-prod/product/12/large.jpg"
+        }
+      }
+    }
+  ]
+}

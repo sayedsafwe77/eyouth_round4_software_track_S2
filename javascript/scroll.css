@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #111;
+  padding: 10px;
+}
+nav a {
+  color: #aaa;
+  margin-right: 20px;
+  text-decoration: none;
+}
+nav a.active {
+  color: #fff;
+  font-weight: bold;
+}
+
+.sec {
+  height: 100vh;
+  padding-top: 60px;
+  font-size: 40px;
+  border-bottom: 1px solid #ddd;
+}

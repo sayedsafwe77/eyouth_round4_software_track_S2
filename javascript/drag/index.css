@@ -1,0 +1,9 @@
+li {
+  padding: 10px;
+  margin: 5px;
+  background: #ddd;
+  cursor: move;
+}
+.dragging {
+  opacity: 0.1;
+}

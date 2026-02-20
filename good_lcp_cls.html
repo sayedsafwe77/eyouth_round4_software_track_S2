@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Good LCP & CLS — Demo Landing</title>
+  <!-- Preload LCP image so it starts loading immediately -->
+  <link rel="preload" as="image" href="./images/image-1-original.jpg">
+  <!-- Fonts with display=optional to avoid CLS from font swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=optional">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Open Sans', sans-serif; color: #333; }
+
+    /* Reserve space for hero to prevent CLS - aspect-ratio + width */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      max-height: 85vh;
+      background: #1a1a2e;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    h1, h2 { font-family: 'Playfair Display', serif; }
+    section { padding: 3rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    .card { background: #f8f8f8; border-radius: 12px; overflow: hidden; }
+    .card img { width: 100%; height: auto; vertical-align: middle; display: block; }
+    .card-content { padding: 1.25rem; }
+    .cta { background: #1a1a2e; color: #fff; padding: 4rem 2rem; text-align: center; }
+    .cta h2 { margin-top: 0; }
+    .banner { background: #eee; padding: 1rem; text-align: center; margin: 0; }
+    /* Fixed height for ad slots - no layout shift when ad loads */
+    .ad-slot {
+      min-height: 250px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 2rem auto;
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+    }
+
+    .feature-row { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; margin: 2rem 0; }
+    .feature-row.reverse { flex-direction: row-reverse; }
+    .feature-row .img-wrap {
+      flex: 1 1 300px;
+      aspect-ratio: 4 / 3;
+      background: #f0f0f0;
+      overflow: hidden;
+    }
+    .feature-row .img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .feature-text { flex: 1 1 300px; }
+  </style>
+</head>
+<body>
+  <div class="banner">Limited offer — Free shipping on orders over $50</div>
+
+  <header style="padding: 1rem 1.5rem; border-bottom: 1px solid #eee;">
+    <nav style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto;">
+      <strong style="font-size: 1.25rem;">Brand</strong>
+      <a href="#features">Features</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#cta">Sign up</a>
+    </nav>
+  </header>
+
+  <!-- GOOD LCP: Preloaded, fetchpriority=high, eager, dimensions reserved via aspect-ratio -->
+  <section class="hero">
+    <img
+      src="./images/image-1-original.jpg"
+      alt="Hero"
+      fetchpriority="high"
+      loading="eager"
+      width="1200"
+      height="675"
+    >
+    <div style="position: absolute; bottom: 2rem; left: 1.5rem; right: 1.5rem; color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">
+      <h1 style="margin: 0 0 0.5rem; font-size: clamp(2rem, 5vw, 3.5rem);">Discover Something New</h1>
+      <p style="margin: 0; font-size: 1.1rem;">Quality products for everyday life.</p>
+    </div>
+  </section>
+
+  <section id="features">
+    <h2>Why Choose Us</h2>
+    <div class="feature-row">
+      <div class="img-wrap">
+        <img src="./images/flower.png" alt="Feature 1" width="400" height="300" loading="lazy">
+      </div>
+      <div class="feature-text">
+        <h3>Premium Quality</h3>
+        <p>We source the finest materials to bring you products that last.</p>
+      </div>
+    </div>
+    <div class="feature-row reverse">
+      <div class="img-wrap">
+        <img src="./images/flower_2.jpg" alt="Feature 2" width="400" height="300" loading="lazy">
+      </div>
+      <div class="feature-text">
+        <h3>Sustainable</h3>
+        <p>Eco-friendly processes from start to finish.</p>
+      </div>
+    </div>
+    <div class="feature-row">
+      <div class="img-wrap">
+        <img src="./images/flower_3.webp" alt="Feature 3" width="400" height="300" loading="lazy">
+      </div>
+      <div class="feature-text">
+        <h3>Fast Delivery</h3>
+        <p>Get your order delivered within 3–5 business days.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" style="padding: 0 1.5rem;">Advertisement</div>
+
+  <section id="gallery">
+    <h2>Our Collection</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="./images/image-2-original.jpg" alt="Product 1" width="400" height="300" loading="lazy">
+        <div class="card-content">
+          <h3>Item One</h3>
+          <p>Classic design, modern comfort.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./images/image-3-original.jpg" alt="Product 2" width="400" height="300" loading="lazy">
+        <div class="card-content">
+          <h3>Item Two</h3>
+          <p>Perfect for any occasion.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./images/flower_4.png" alt="Product 3" width="400" height="300" loading="lazy">
+        <div class="card-content">
+          <h3>Item Three</h3>
+          <p>Stand out from the crowd.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./images/weather.webp" alt="Product 4" width="400" height="300" loading="lazy">
+        <div class="card-content">
+          <h3>Item Four</h3>
+          <p>Designed for durability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero" style="margin-top: 2rem; max-width: 1200px; margin-left: auto; margin-right: auto;">
+    <img
+      src="./images/home/telephoto_lens__q7w8mmhm4tmm_medium_2x.jpg"
+      alt="Lifestyle"
+      width="1200"
+      height="675"
+      loading="lazy"
+    >
+  </section>
+
+  <div class="ad-slot" style="padding: 0 1.5rem;">Advertisement</div>
+
+  <section id="cta" class="cta">
+    <h2>Join Our Community</h2>
+    <p>Get exclusive offers and early access to new products.</p>
+    <form onsubmit="return false;" style="margin-top: 1rem;">
+      <input type="email" placeholder="Your email" style="padding: 0.75rem 1rem; width: 280px; max-width: 100%; border: none; border-radius: 8px;">
+      <button type="submit" style="padding: 0.75rem 1.5rem; margin-left: 0.5rem; background: #e94560; color: #fff; border: none; border-radius: 8px; cursor: pointer;">Sign up</button>
+    </form>
+  </section>
+
+  <footer style="padding: 2rem 1.5rem; text-align: center; background: #0f0f1a; color: #888;">
+    <p style="margin: 0;">&copy; 2025 Demo. Built with good LCP and CLS practices.</p>
+  </footer>
+
+  <!-- Cookie banner: fixed position so it doesn't cause CLS when injected -->
+  <script>
+    setTimeout(function() {
+      var b = document.createElement('div');
+      b.className = 'banner';
+      b.style.cssText = 'background:#ffeaa7;padding:1rem;position:fixed;bottom:0;left:0;right:0;z-index:999;';
+      b.textContent = 'We use cookies. By continuing you accept our policy.';
+      document.body.appendChild(b);
+    }, 500);
+  </script>
+</body>
+</html>

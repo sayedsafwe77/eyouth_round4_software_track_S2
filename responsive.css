@@ -1,0 +1,32 @@
+/* .page {
+  width: 1200px;
+  margin: auto;
+}
+
+.sidebar {
+  width: 300px;
+  float: left;
+}
+
+.content {
+  margin-left: 300px;
+} */
+.page {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.image-wrapper {
+  width: 50%;
+  height: 350px;
+}
+
+@media (min-width: 768px) {
+  .page {
+    grid-template-columns: 300px 1fr;
+  }
+}
+img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}

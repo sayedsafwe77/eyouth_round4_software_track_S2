@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Good LCP</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+      }
+      .hero img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to our website</h1>
+
+    <!-- LCP element -->
+    <div class="hero">
+      <img
+        src="hero-800.jpg"
+        srcset="hero-400.jpg 400w, hero-800.jpg 800w, hero-1600.jpg 1600w"
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+        alt="Hero image"
+      />
+    </div>
+
+    <p>Lorem ipsum dolor sit amet...</p>
+  </body>
+</html>
