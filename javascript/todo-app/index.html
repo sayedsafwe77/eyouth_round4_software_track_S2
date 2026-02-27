@@ -3,38 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
     <title>Document</title>
-    <script src="./event_loop.js" defer></script>
-
-    <style>
-      .list {
-        opacity: 1;
-        transition: opacity 1s ease;
-      }
-      .disabled {
-        opacity: 0;
-      }
-      .grandparent {
-        background: lightgreen;
-        width: 200px;
-        height: 200px;
-      }
-      .parent {
-        background: lightblue;
-        height: 100px;
-        width: 100px;
-      }
-      .child {
-        background: lightcoral;
-        height: 50px;
-        width: 50px;
-      }
-      .image {
-        width: 100px;
-      }
-    </style>
+    <script src="./index.js" defer></script>
   </head>
   <body>
+    <div class="notification hidden">New todos added</div>
     <header>
       <input type="number" class="skip" placeholder="skip" value="0" />
       <input type="number" class="limit" placeholder="limit" value="15" />
@@ -42,7 +16,10 @@
     </header>
 
     <section class="tods-section">
-      <ul class="todos-list"></ul>
+      <ul class="todos-list" title="old title"></ul>
     </section>
+    <div class="todo-links"></div>
+
+    <textarea name="" class="resize-text" id=""></textarea>
   </body>
 </html>
