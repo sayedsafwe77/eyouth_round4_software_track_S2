@@ -107,3 +107,59 @@ function insertLeadsIntoDom(campaign) {
   document.querySelector(".leads").innerHTML = leadsList;
 }
 addCampaignsTagsToDom(Object.keys(groupedByCampaign));
+
+// Array function push pop unshift shift slice splice forEach map filter reduce find findIndex some every includes indexOf lastIndexOf join reverse sort concat flat flatMap fill from of entries keys values
+
+// var employers = [
+//   {
+//     id: 1,
+//     name: "sayed",
+//     salary: 1000,
+//   },
+//   {
+//     id: 2,
+//     name: "ahmed",
+//     salary: 2000,
+//   },
+// ];
+// const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+// // Create an Iterable
+// const list = fruits.keys();
+
+// // List the Keys
+// let text = "";
+// for (let x of list) {
+//   text += x + "<br>";
+// }
+// console.log(text);
+
+// 0 => Banana 1 => Orange 2 => Apple 3=> Mango
+// console.log(text);
+
+// const numbers = [1, 2, 3, 4];
+
+// const result = numbers.flatMap((n) => (n % 2 === 0 ? [n * 2] : []));
+
+// console.log(result);
+
+// if (arr.every((el) => !isNaN(el))) {
+//   console.log(arr.reduce((a, b) => +a + +b));
+// } else {
+//   console.log("there is an element not a number");
+// }
+// let text = "Hello world!";
+// let result = text.substring(0, 5);
+// console.log(result, text);
+
+// Count Word Occurrences
+// Find the Longest Word
+// Group Numbers (Even / Odd)
+// Word Counter (split + reduce)
+// Build Table from Data (map)
+// Image Gallery Lazy Loader
+
+var arr = [1, 2, 3, 4];
+var arr2 = Array.from(arr);
+arr[0] = "sayed";
+console.log(arr2);

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Directory</title>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+      }
+
+      .controls {
+        margin-bottom: 20px;
+      }
+
+      .user {
+        padding: 10px;
+        border: 1px solid #ddd;
+        margin-bottom: 8px;
+        border-radius: 5px;
+      }
+
+      .highlight {
+        background: yellow;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>User Directory</h2>
+
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search users..." />
+
+      <select id="sort">
+        <option value="">Sort</option>
+        <option value="name">Name</option>
+        <option value="age">Age</option>
+      </select>
+
+      <p id="count"></p>
+    </div>
+
+    <div id="users"></div>
+
+    <script src="./user-directory.js"></script>
+  </body>
+</html>
