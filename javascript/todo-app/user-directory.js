@@ -63,3 +63,11 @@ function applySort() {
 
   render(sorted);
 }
+
+//  render users into dom
+//  listen sort dropdown change
+//  sort users
+// rerender sorted users into dom
+// listen search input
+// filter users based on user search
+// rerender filtered users into dom
